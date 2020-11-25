@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         //takes the user to the user details page
-                        Intent intent = new Intent(MainActivity.this, Userinformation.class);
+                        Intent intent = new Intent(MainActivity.this, UserDetails.class);
                         startActivity(intent);
 
                     }

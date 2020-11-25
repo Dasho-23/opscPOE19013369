@@ -9,13 +9,12 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="0dp"
+        android:layout_width="432dp"
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-11dp">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -31,41 +30,38 @@
         android:id="@+id/btnEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="22dp"
         android:backgroundTint=" #DAB5D2"
         android:text="Edit"
-        app:layout_constraintEnd_toEndOf="@+id/txtEditDaily"
-        app:layout_constraintStart_toEndOf="@+id/imgView"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgView" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="63dp"
+        android:layout_marginEnd="8dp"
         android:text="Height"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtEditHeight"
+        app:layout_constraintEnd_toStartOf="@+id/txtEditHeight" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="12dp"
         android:text="Weight"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/txtEditWeight"
+        app:layout_constraintTop_toTopOf="@+id/txtEditWeight" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="27dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
         android:text="Goal weight"
         app:layout_constraintEnd_toStartOf="@+id/txtEditGoal"
         app:layout_constraintTop_toTopOf="@+id/txtEditGoal" />
@@ -74,115 +70,142 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="16dp"
         android:text="Calorie Intake"
-        app:layout_constraintBottom_toTopOf="@+id/txtEditDaily"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtEditCalorie"
         app:layout_constraintEnd_toStartOf="@+id/txtEditCalorie" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="7dp"
+        android:text="Goal Calorie Intake"
+        app:layout_constraintEnd_toStartOf="@+id/txtGoalCalorie"
+        app:layout_constraintTop_toTopOf="@+id/txtGoalCalorie" />
 
     <EditText
         android:id="@+id/txtEditHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="63dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="19dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2" />
+
+    <EditText
+        android:id="@+id/txtEditWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="18dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtEditWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
         android:id="@+id/txtEditGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="38dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtEditCalorie"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEditWeight" />
 
     <EditText
         android:id="@+id/txtEditCalorie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="11dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/txtGoalCalorie"
+        app:layout_constraintEnd_toEndOf="@+id/txtGoalCalorie" />
+
+    <EditText
+        android:id="@+id/txtGoalCalorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="119dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="120dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView13" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
+        android:layout_marginTop="7dp"
         android:text="Daily Weight Changes"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtEditDaily"
         app:layout_constraintEnd_toStartOf="@+id/txtEditDaily"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/txtEditDaily" />
 
     <EditText
         android:id="@+id/txtEditDaily"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="272dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEditGoal" />
 
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="Enter changes and click edit to save changes"
-        app:layout_constraintBottom_toTopOf="@+id/btnView"
-        app:layout_constraintStart_toStartOf="@+id/btnView" />
 
     <Button
         android:id="@+id/btnView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="49dp"
         android:backgroundTint=" #DAB5D2"
         android:text="View"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnOpen"
-        app:layout_constraintEnd_toEndOf="@+id/textView13"
-        app:layout_constraintStart_toStartOf="@+id/textView10" />
+        app:layout_constraintBottom_toTopOf="@+id/imgView"
+        app:layout_constraintEnd_toStartOf="@+id/txtGoalCalorie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgView" />
 
     <Button
         android:id="@+id/btnOpen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="22dp"
         android:backgroundTint=" #DAB5D2"
         android:text="Camera"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnView" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnChart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint=" #DAB5D2"
+        android:text="Chart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imgView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEditDaily"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnEdit"
+        app:layout_constraintStart_toEndOf="@+id/btnView"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

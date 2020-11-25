@@ -29,9 +29,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Userinformation extends AppCompatActivity {
     //Fields
-    EditText _txtGW,_txtW,_txtH,_txtDWC,_txtCI;
-    Button _btnEdit,_btnView,_btnOpen;
-    String goalWeight,curWeight, dailyWeight, height, calIntake;
+    EditText _txtGW,_txtW,_txtH,_txtDWC,_txtCI,_txtGIC;
+    Button _btnEdit,_btnView,_btnOpen, _btnChart;
+    String goalWeight,curWeight, dailyWeight, height, calIntake,goalIntake;
     Details Detail;
     ImageView imgView;
     private FirebaseAuth mAuth;
@@ -48,6 +48,7 @@ public class Userinformation extends AppCompatActivity {
         _txtH =(EditText)findViewById(R.id.txtEditHeight);
         _txtDWC =(EditText)findViewById(R.id.txtEditDaily);
         _txtCI  =(EditText)findViewById(R.id.txtEditCalorie);
+        _txtGIC = findViewById(R.id.txtGoalCalorie);
 
         imgView =findViewById(R.id.imgView);
 
@@ -55,6 +56,7 @@ public class Userinformation extends AppCompatActivity {
         _btnEdit =(Button) findViewById(R.id.btnEdit);
         _btnView =(Button) findViewById(R.id.btnView);
         _btnOpen = findViewById(R.id.btnOpen);
+        _btnChart = findViewById(R.id.btnChart);
 
         //Requesting camera permission
         if(ContextCompat.checkSelfPermission(Userinformation.this,
@@ -66,6 +68,7 @@ public class Userinformation extends AppCompatActivity {
                     100);
         }
 
+
         _btnOpen.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +78,27 @@ public class Userinformation extends AppCompatActivity {
             }
         });
 
+        _btnChart.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //gets the data for the chart before taking the user to the chart page
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference(mAuth.getCurrentUser().getUid());
+                goalWeight = Detail.getCurWeight();
+                curWeight = Detail.getCurWeight();
+                dailyWeight = Detail.getDailyWeight();
+                height = Detail.getHeight();
+                goalIntake = Detail.getGoalIntCall();
+                calIntake = Detail.getCalIntake();
+                //objet of details class
+                Detail = new Details(goalWeight, curWeight, dailyWeight, height,goalIntake,calIntake,Detail.getWeightMeasu());
+
+                //takes the user to the chart page
+                Intent intent = new Intent(Userinformation.this, Chart.class);
+                startActivity(intent);
+
+            }
+        });
 
 
         _btnEdit.setOnClickListener(new OnClickListener() {
@@ -87,8 +111,9 @@ public class Userinformation extends AppCompatActivity {
                 curWeight = _txtW.getText().toString().trim();
                 dailyWeight = _txtDWC.getText().toString().trim();
                 height = _txtH.getText().toString().trim();
+                goalIntake = _txtGIC.getText().toString().trim();
                 calIntake = _txtCI.getText().toString().trim();
-                Detail = new Details(goalWeight, curWeight, dailyWeight, height,calIntake);
+                Detail = new Details(goalWeight, curWeight, dailyWeight, height,goalIntake,calIntake,Detail.getWeightMeasu());
 
                 myRef.child("Details").setValue(Detail);
 
@@ -109,7 +134,9 @@ public class Userinformation extends AppCompatActivity {
                         _txtW.setText(Detail.getCurWeight());
                         _txtGW.setText(Detail.getGoalWeight());
                         _txtDWC.setText(Detail.getDailyWeight());
+                        _txtGIC.setText(Detail.getGoalIntCall());
                         _txtCI.setText(Detail.getCalIntake());
+
                     }
 
                     @Override

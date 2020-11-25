@@ -1,19 +1,27 @@
 package com.myfirstapp.fitnesstrack;
 
+import com.github.mikephil.charting.data.BarEntry;
+
+import java.util.ArrayList;
+
 public class Details {
     //fields
-    String goalWeight,curWeight, dailyWeight, height, calIntake;
-   //empty constructor
+    String goalWeight,curWeight, dailyWeight, height,goalIntCal, calIntake,weightMeasu;
+
+
+    //empty constructor
     public Details() {
 
     }
 //constructor with parameters
-    public Details(String goalWeight, String curWeight, String dailyWeight, String height, String calIntake) {
+    public Details(String goalWeight, String curWeight, String dailyWeight, String height,String goalIntCal, String calIntake, String weightMeasu) {
         this.goalWeight = goalWeight;
         this.curWeight = curWeight;
         this.dailyWeight = dailyWeight;
         this.height = height;
+        this.goalIntCal = goalIntCal;
         this.calIntake = calIntake;
+        this.weightMeasu =weightMeasu;
     }
 //getters and setters
     public String getGoalWeight() {
@@ -48,6 +56,14 @@ public class Details {
         this.height = height;
     }
 
+    public String getGoalIntCall() {
+        return goalIntCal;
+    }
+
+    public void setGoalIntCal(String goalIntCal) {
+        this.calIntake = goalIntCal;
+    }
+
     public String getCalIntake() {
         return calIntake;
     }
@@ -55,6 +71,16 @@ public class Details {
     public void setCalIntake(String calIntake) {
         this.calIntake = calIntake;
     }
+
+    public String getWeightMeasu() {
+        return weightMeasu;
+    }
+
+    public void setWeightMeasu(String weightMeasu) {
+        this.weightMeasu = weightMeasu;
+    }
+
+
 
 
 }
